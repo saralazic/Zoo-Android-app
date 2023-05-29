@@ -61,7 +61,7 @@
                 app:layout_constraintVertical_bias="0.30" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/usernameTextEdit"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -89,7 +89,7 @@
                 app:layout_constraintVertical_bias="0.500" />
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/passwordTextEdit"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -118,6 +118,23 @@
                 android:background="@drawable/button_background"
                 />
 
+
+            <TextView
+                android:id="@+id/textinput_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="20dp"
+                android:textColor="@color/errorColor"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintVertical_bias="0.85"
+                android:fontFamily="@font/baloo_bhai"
+                />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -125,6 +142,7 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent">
+
 
                 <TextView
                     android:id="@+id/textView3"
@@ -141,7 +159,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/linkTextView"
+                    android:id="@+id/registerLink"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -153,7 +171,6 @@
                     android:linksClickable="true"
                     />
             </LinearLayout>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
