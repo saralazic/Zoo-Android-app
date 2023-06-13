@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pandicazoovrt.tickets.TicketsActivity;
+
 public class AboutActivity extends AppCompatActivity {
 
     @Override

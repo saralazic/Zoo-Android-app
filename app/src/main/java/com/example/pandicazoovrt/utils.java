@@ -1,9 +1,17 @@
 package com.example.pandicazoovrt;
+
+import com.example.pandicazoovrt.tickets.TicketsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -98,6 +106,4 @@ public class utils {
         editor.putString(key, json);
         editor.apply();
     }
-
-
 }
