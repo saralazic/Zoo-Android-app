@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Add the background for the upper line -->
+<item>
+    <shape android:shape="rectangle">
+        <size android:height="1dp" />     <!-- Adjust the height as per your preference -->
+    </shape>
+</item>
+
+<!-- Add the background for the lower line -->
+<item android:top="1dp">                 <!-- Adjust the top padding to control the space -->
+    <shape android:shape="rectangle">
+        <size android:height="1dp" />     <!-- Adjust the height as per your preference -->
+    </shape>
+</item>
+</layer-list>
