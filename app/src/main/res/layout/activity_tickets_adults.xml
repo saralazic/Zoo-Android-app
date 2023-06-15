@@ -112,12 +112,12 @@
                 android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="560dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="500dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="Unesi promo kod:"
+                android:text="Promo kod:"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +128,7 @@
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="160dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="200 din"
+                android:text="800 din"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +142,7 @@
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="235dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="250 din"
+                android:text="1000 din"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="305dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="400 din"
+                android:text="1200 din"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -169,7 +169,7 @@
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="392dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="700 din"
+                android:text="1500 din"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -182,25 +182,25 @@
                 android:layout_marginStart="210dp"
                 android:layout_marginTop="125dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="Cena po detetu"
+                android:text="Cena po osobi"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="72dp"
+                android:layout_marginStart="52dp"
                 android:layout_marginTop="60dp"
                 android:fontFamily="@font/baloo_bhai"
-                android:text="Ulaznice za decu"
+                android:text="Ulaznice za odrasle"
                 android:textColor="@color/black"
                 android:textSize="35dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <TextView
                 android:id="@+id/textView7"
@@ -211,7 +211,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -224,7 +224,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo+akvarijum"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -237,7 +237,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo+hranjenje"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -250,7 +250,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="pandi"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -264,7 +264,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Full pandica"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -277,7 +277,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="(zoo+hranjenje+akvarijum)"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -294,7 +294,7 @@
                 app:layout_constraintHorizontal_bias="0.960"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.275"></NumberPicker>
+                app:layout_constraintVertical_bias="0.245"></NumberPicker>
 
             <NumberPicker
                 android:id="@+id/numberpicker_2"
@@ -309,7 +309,7 @@
                 app:layout_constraintHorizontal_bias="0.960"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.390"></NumberPicker>
+                app:layout_constraintVertical_bias="0.370"></NumberPicker>
 
             <NumberPicker
                 android:id="@+id/numberpicker_3"
@@ -324,7 +324,7 @@
                 app:layout_constraintHorizontal_bias="0.960"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.520"></NumberPicker>
+                app:layout_constraintVertical_bias="0.485"></NumberPicker>
 
             <NumberPicker
                 android:id="@+id/numberpicker_4"
@@ -339,11 +339,14 @@
                 app:layout_constraintHorizontal_bias="0.960"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.660"></NumberPicker>
+                app:layout_constraintVertical_bias="0.630"></NumberPicker>
+
+
+            <!-- FOOTER  -->
 
             <EditText
                 android:id="@+id/promocode"
-                android:layout_width="170dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input"
                 android:ems="10"
@@ -352,13 +355,29 @@
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.12"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.9" />
+                app:layout_constraintVertical_bias="0.840" />
 
-
-            <!-- FOOTER  -->
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="268dp"
+                android:background="@drawable/button_confirm"
+                android:fontFamily="@font/baloo_bhai"
+                android:paddingLeft="0dp"
+                android:paddingTop="2dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="2dp"
+                android:shadowColor="#EA8C00"
+                android:text="Potvrdi"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.928" />
 
             <TextView
                 android:id="@+id/aboutLink"
@@ -373,6 +392,16 @@
                 android:textSize="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/adults"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
