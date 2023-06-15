@@ -17,6 +17,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class utils {
 
     public static void initAll(){
@@ -106,4 +107,60 @@ public class utils {
         editor.putString(key, json);
         editor.apply();
     }
+
+    public static int[] discount(int zoo, int aq, int feed, int full, String promo_code) {
+        int overallCount = zoo + aq + feed + full;
+
+        if (promo_code != PromoCodes.third_free || overallCount < 3) {
+            return new int[]{ zoo, aq, feed, full };
+        }
+
+        int toDiscount = (int) Math.floor(overallCount / 3);
+
+        if (zoo > toDiscount) {
+            zoo = zoo - toDiscount;
+            toDiscount = 0;
+        } else {
+            toDiscount = toDiscount - zoo;
+            zoo = 0;
+        }
+
+        if (aq > toDiscount) {
+            aq = aq - toDiscount;
+            toDiscount = 0;
+        } else {
+            toDiscount = toDiscount - aq;
+            aq = 0;
+        }
+
+        if (feed > toDiscount) {
+            feed = feed - toDiscount;
+            toDiscount = 0;
+        } else {
+            toDiscount = toDiscount - feed;
+            feed = 0;
+        }
+
+        if (full > toDiscount) {
+            full = full - toDiscount;
+            toDiscount = 0;
+        } else {
+            toDiscount = toDiscount - full;
+            full = 0;
+        }
+
+        return new int[]{ zoo, aq, feed, full };
+    }
+
+    public static boolean validNumberOfTickets(int zoo, int aq, int feed, int full) {
+        return (
+                zoo >= 0 &&
+                aq >= 0 &&
+                feed >= 0 &&
+                full >= 0
+        );
+    }
+
 }
+
+

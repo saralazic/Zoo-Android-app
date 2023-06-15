@@ -14,14 +14,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.pandicazoovrt.AboutActivity;
 import com.example.pandicazoovrt.AccountActivity;
 import com.example.pandicazoovrt.AnimalsActivity;
+import com.example.pandicazoovrt.ErrorMessages;
 import com.example.pandicazoovrt.EventsActivity;
 import com.example.pandicazoovrt.NotificationsActivity;
+import com.example.pandicazoovrt.Prices;
+import com.example.pandicazoovrt.PromoCodes;
 import com.example.pandicazoovrt.R;
+import com.example.pandicazoovrt.utils;
 
 public class AdultsTicketsActivity extends AppCompatActivity {
 
+    private int price;
+    private String message;
     private NumberPicker picker1, picker2, picker3, picker4;
-    private int cnt1, cnt2, cnt3, cnt4;
+    private int cnt1 =0, cnt2 = 0, cnt3 = 0, cnt4 = 0;
+
+    private String promo_code = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +103,7 @@ public class AdultsTicketsActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
                 cnt1 = picker1.getValue();
+                calculatePrice(cnt1, cnt2, cnt3, cnt4);
             }
         });
 
@@ -106,6 +115,8 @@ public class AdultsTicketsActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
                 int cnt2 = picker2.getValue();
+                calculatePrice(cnt1, cnt2, cnt3, cnt4);
+
             }
         });
 
@@ -117,6 +128,8 @@ public class AdultsTicketsActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
                 int cnt3 = picker3.getValue();
+                calculatePrice(cnt1, cnt2, cnt3, cnt4);
+
             }
         });
 
@@ -128,8 +141,34 @@ public class AdultsTicketsActivity extends AppCompatActivity {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
                 int cnt4 = picker4.getValue();
+                calculatePrice(cnt1, cnt2, cnt3, cnt4);
             }
         });
 
+    }
+
+    protected int calculatePrice(int zoo, int aq, int feed, int full) {
+        if (utils.validNumberOfTickets(zoo, aq, feed, full)) {
+          int priceFeed =
+                        this.promo_code.equals(PromoCodes.free_feeding)
+                        ? Prices.ADULT_ZOO
+                        : Prices.ADULT_FEED;
+
+          int priceFull =
+                        this.promo_code.equals(PromoCodes.free_feeding)
+                        ? Prices.ADULT_AQ
+                        : Prices.ADULT_FULL;
+
+          int [] discounted = utils.discount(zoo, aq, feed, full, promo_code);
+
+          int sumZoo = discounted[0] * Prices.ADULT_ZOO;
+          int sumAq = discounted[1] * Prices.ADULT_AQ;
+          int sumFeed = discounted[2] * priceFeed;
+          int sumFull = discounted[3] * priceFull;
+          this.price = sumZoo + sumAq + +sumFeed + sumFull;
+        } else {
+            this.message = ErrorMessages.INVALID_TICKET_INPUT;
+        }
+        return this.price;
     }
 }
