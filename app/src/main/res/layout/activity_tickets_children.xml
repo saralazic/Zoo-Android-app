@@ -212,7 +212,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,7 +225,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo+akvarijum"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -238,7 +238,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Zoo+hranjenje"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -251,7 +251,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="pandi"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -265,7 +265,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="Full pandica"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -278,7 +278,7 @@
                 android:fontFamily="@font/baloo_bhai"
                 android:text="(zoo+hranjenje+akvarijum)"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
