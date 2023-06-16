@@ -3,8 +3,12 @@ package com.example.pandicazoovrt.tickets;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -24,10 +28,11 @@ import com.example.pandicazoovrt.utils;
 
 public class AdultsTicketsActivity extends AppCompatActivity {
 
-    private int price;
+    private int price = 0;
     private String message;
     private NumberPicker picker1, picker2, picker3, picker4;
     private int cnt1 =0, cnt2 = 0, cnt3 = 0, cnt4 = 0;
+    private String code;
 
     private String promo_code = "";
 
@@ -36,6 +41,8 @@ public class AdultsTicketsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tickets_adults);
 
+        TextView priceText = findViewById(R.id.priceText);
+        EditText promoCodeInput = findViewById(R.id.promocode);
 
 
         TextView linkTextView = findViewById(R.id.aboutLink);
@@ -102,8 +109,13 @@ public class AdultsTicketsActivity extends AppCompatActivity {
         picker1.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+                code = String.valueOf(promoCodeInput.getText());
                 cnt1 = picker1.getValue();
-                calculatePrice(cnt1, cnt2, cnt3, cnt4);
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Cena: "+ price);
             }
         });
 
@@ -114,9 +126,13 @@ public class AdultsTicketsActivity extends AppCompatActivity {
         picker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                int cnt2 = picker2.getValue();
-                calculatePrice(cnt1, cnt2, cnt3, cnt4);
-
+                code = String.valueOf(promoCodeInput.getText());
+                cnt1 = picker1.getValue();
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Cena: "+ price);
             }
         });
 
@@ -127,9 +143,13 @@ public class AdultsTicketsActivity extends AppCompatActivity {
         picker3.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                int cnt3 = picker3.getValue();
-                calculatePrice(cnt1, cnt2, cnt3, cnt4);
-
+                code = String.valueOf(promoCodeInput.getText());
+                cnt1 = picker1.getValue();
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Cena: "+ price);
             }
         });
 
@@ -140,22 +160,60 @@ public class AdultsTicketsActivity extends AppCompatActivity {
         picker4.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                int cnt4 = picker4.getValue();
-                calculatePrice(cnt1, cnt2, cnt3, cnt4);
+                code = String.valueOf(promoCodeInput.getText());
+                cnt1 = picker1.getValue();
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Cena: "+ price);
+            }
+        });
+
+        promoCodeInput.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE || event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                // Input is done, perform your desired actions here
+                // This will be triggered when the user presses "Done" or "Enter" on the keyboard
+                code = String.valueOf(promoCodeInput.getText());
+                cnt1 = picker1.getValue();
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                Log.d("AdultsTicketsActivity",""+code);
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Cena: "+ price);
+                return true;
+            }
+            return false;
+        });
+
+
+        Button confirmButton = findViewById(R.id.confirm_button);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                code = String.valueOf(promoCodeInput.getText());
+                cnt1 = picker1.getValue();
+                cnt2 = picker2.getValue();
+                cnt3 = picker3.getValue();
+                cnt4 = picker4.getValue();
+                int price = calculatePrice(cnt1, cnt2, cnt3, cnt4, code);
+                priceText.setText("Zahtev je u obradi!");
             }
         });
 
     }
 
-    protected int calculatePrice(int zoo, int aq, int feed, int full) {
+    protected int calculatePrice(int zoo, int aq, int feed, int full, String promo_code) {
+        Log.d("AdultsTicketsActivity","calc "+code);
         if (utils.validNumberOfTickets(zoo, aq, feed, full)) {
           int priceFeed =
-                        this.promo_code.equals(PromoCodes.free_feeding)
+                        promo_code.equals(PromoCodes.free_feeding)
                         ? Prices.ADULT_ZOO
                         : Prices.ADULT_FEED;
 
           int priceFull =
-                        this.promo_code.equals(PromoCodes.free_feeding)
+                        promo_code.equals(PromoCodes.free_feeding)
                         ? Prices.ADULT_AQ
                         : Prices.ADULT_FULL;
 

@@ -111,7 +111,7 @@ public class utils {
     public static int[] discount(int zoo, int aq, int feed, int full, String promo_code) {
         int overallCount = zoo + aq + feed + full;
 
-        if (promo_code != PromoCodes.third_free || overallCount < 3) {
+        if (!promo_code.equals(PromoCodes.third_free) || overallCount < 3) {
             return new int[]{ zoo, aq, feed, full };
         }
 
