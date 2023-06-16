@@ -5,19 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AnimalsActivity"
+    android:background="@drawable/green_bg_tickets"
     >
 
+    <!--> HEADER <-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/greenBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="132dp"
-        android:fontFamily="@font/baloo_bhai_font"
-        android:text="ANIMALS"
-        android:textColor="@color/black"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="394dp" />
+        <ImageButton
+            android:id="@+id/ticketsIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/greenBackground"
+            android:clickable="true"
+            android:onClick="onIconButtonClick"
+            android:outlineSpotShadowColor="@color/greenBackground"
+            android:src="@drawable/confirmation_number"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/eventsIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/greenBackground"
+            android:clickable="true"
+            android:onClick="onIconButtonClick"
+            android:outlineSpotShadowColor="@color/greenBackground"
+            android:src="@drawable/event_seat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/animalsIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/greenBackground"
+            android:clickable="true"
+            android:onClick="onIconButtonClick"
+            android:outlineSpotShadowColor="@color/greenBackground"
+            android:src="@drawable/pets"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/notificationsIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/greenBackground"
+            android:clickable="true"
+            android:onClick="onIconButtonClick"
+            android:outlineSpotShadowColor="@color/greenBackground"
+            android:src="@drawable/notifications"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/accountIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/greenBackground"
+            android:clickable="true"
+            android:onClick="onIconButtonClick"
+            android:outlineSpotShadowColor="@color/greenBackground"
+            android:src="@drawable/account"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
