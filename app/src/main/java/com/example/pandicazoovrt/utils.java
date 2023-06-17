@@ -1,5 +1,6 @@
 package com.example.pandicazoovrt;
 
+import com.example.pandicazoovrt.tickets.Comment;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -15,17 +16,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 public class utils {
 
     public static void initAll(){
+        clearStorage();
         initUser();
         initEvents();
+        initAnimal();
     }
 
+
     public static String ALL_USERS = "USERS";
+    public static String ALL_ANIMALS = "ANIMALS";
     public static String EVENTS = "EVENTS";
     public static String LOGGED_USER = "LOGGED_USER";
 
@@ -56,7 +62,6 @@ public class utils {
                 eventsMina
         ));
 
-    //    clearStorage();
         List<User> listFromStorage = getAllUsers();
         if(listFromStorage.isEmpty()){
             utils.saveListOfObjectsToLocalStorage(ALL_USERS, userList);
@@ -73,6 +78,161 @@ public class utils {
         }
     }
 
+    public static void initAnimal(){
+        List<Animal> animalList = new ArrayList<>();
+
+        Comment[] emptyCommentsSection = {};
+        Comment[] commentsPandas = {new Comment(
+                    "sara",
+                    new Date(2023, 4, 20),
+                    "Volim pande",
+                    emptyCommentsSection
+                ),
+                new Comment(
+                    "mina",
+                    new Date(2023, 4, 23),
+                    "Da li su dzinovske pande jos uvek ugrozena vrsta?",
+                    emptyCommentsSection
+                ),
+        };
+
+        animalList.add(new Animal(
+                "Džinovska panda",
+                "Ailuropoda melanoleuca",
+                "Kina",
+                "2000",
+                "20 godina",
+                 R.drawable.giant_panda,
+                commentsPandas
+        ));
+
+
+        Comment[] commentsRedPanda = {new Comment(
+                "Prelepa je",
+                new Date(2023, 4, 28),
+                "Volim pande",
+                emptyCommentsSection
+        ),
+        };
+
+        animalList.add(new Animal(
+                "Crvena panda",
+                "Ailurus fulgens",
+                 "Nepal, Kina",
+                 "2500",
+                 "8-15 godina",
+                R.drawable.new_red_panda,
+                commentsRedPanda
+        ));
+
+
+        Comment[] replyRabbit = {new Comment(
+                 "Zoo vrt Pandica",
+                new Date(2023, 4, 26),
+                 "Poštovana, za sada ne postoji ali svidja nam se zamisao i u budućem periodu će najverovatnije biti ostvarena",
+                 emptyCommentsSection)
+        };
+
+        Comment[] commentsRabbit = {new Comment(
+                "sara",
+                new Date(2023, 4, 24),
+                "Obožavam kuniće, prelepi su",
+                emptyCommentsSection),
+                new Comment(
+                    "mina",
+                        new Date(2023, 4, 26),
+                     "Postoji li deo gde mogu da se maze zivotinje poput domacih kunica?",
+                    replyRabbit)
+        };
+
+        animalList.add(new Animal(
+                "Patuljasti zec",
+                "Oryctolagus cuniculus domesticus",
+                "Južna Evropa",
+                "ne postoji adekvatna procena",
+                "6-12 godina",
+                 R.drawable.rabbit,
+                commentsRabbit
+        ));
+
+        animalList.add(new Animal(
+                "Afrički slon",
+                "Loxodonta africana",
+                "Afrika",
+                "oko 40 hiljada",
+                "oko 70 godina",
+                R.drawable.elephant,
+                emptyCommentsSection
+        ));
+
+        animalList.add(new Animal(
+                "Kraljevski pingvin",
+                "Aptenodytes patagonicus",
+                "ostrva sub-Antarktika",
+                "2,23 miliona parova",
+                "15-25 godina",
+                R.drawable.penguin,
+                emptyCommentsSection
+        ));
+
+
+        animalList.add(new Animal(
+                "Nilski konj",
+                "Hippopotamus amphibius",
+                "Severna Afrika i Evropa",
+                "oko 120 hiljada",
+                "40-50 godina",
+                R.drawable.hippo,
+                emptyCommentsSection
+        ));
+
+        animalList.add(new Animal(
+                 "Tomasov langur",
+                 "Presbytis thomasi",
+                 "Severna Sumatra, Indonezija",
+                 "550 do 700",
+                 "do 20 godina",
+                R.drawable.langur,
+                emptyCommentsSection
+        ));
+
+        animalList.add(new Animal(
+                "Ružičasti ﬂamingo",
+                "Phoenicopterus",
+                "Afrika, južna Azija, južna Evropa",
+                "između 1.5 i 2.5 miliona",
+                "20-30 godina, u zatočeništvu do 50",
+                R.drawable.flamingo,
+                emptyCommentsSection
+        ));
+
+        animalList.add(new Animal(
+                "Žirafa",
+                "Giraffa camelopardalis",
+                "Od Čada do Južne Afrike",
+                "110 do 150 hiljada jedinki",
+                "220-25 godina, u zatočeništvu do 28",
+                R.drawable.giraffe,
+                emptyCommentsSection
+        ));
+
+        animalList.add(new Animal(
+                "Staklena žaba",
+                "Centrolenidae",
+                "Južna Amerika",
+                "nema informacija",
+                "do 14 godina",
+                R.drawable.frog,
+                emptyCommentsSection
+        ));
+
+
+        List<Animal> listFromStorage = getAllAnimals();
+        if(listFromStorage.isEmpty()){
+            utils.saveListOfObjectsToLocalStorage(ALL_ANIMALS, animalList);
+        }
+    }
+
 
     public static User getLoggedInUser(){
         return utils.getOneObjectFromLocalStorage(LOGGED_USER, new TypeToken<User>(){}.getType());
@@ -80,6 +240,10 @@ public class utils {
     }
     public static List<User> getAllUsers(){
         return utils.getListOfObjectsFromLocalStorage(ALL_USERS, new TypeToken<List<User>>(){}.getType());
+    }
+
+    public static List<Animal> getAllAnimals(){
+        return utils.getListOfObjectsFromLocalStorage(ALL_ANIMALS, new TypeToken<List<Animal>>(){}.getType());
     }
 
     public static int[] getEvents(){
