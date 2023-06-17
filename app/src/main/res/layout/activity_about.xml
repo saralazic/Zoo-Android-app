@@ -176,12 +176,12 @@
 
             <ImageView
                 android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="256dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:src="@drawable/branch"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

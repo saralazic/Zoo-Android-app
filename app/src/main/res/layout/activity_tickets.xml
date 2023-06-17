@@ -238,7 +238,7 @@
                 android:autoLink="web"
                 android:fontFamily="@font/baloo_bhai"
                 android:text="O NAMA"
-                android:textColor="@color/greenBackground"
+                android:textColor="@color/white"
                 android:textSize="30dp"
                 android:layout_marginRight="10dp"
                 android:linksClickable="true"
