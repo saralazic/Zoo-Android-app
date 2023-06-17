@@ -124,37 +124,70 @@
             <ImageView
                 android:id="@+id/redPanda"
                 android:layout_width="280dp"
-                android:layout_height="400dp"
+                android:layout_height="440dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/new_red_panda" />
 
-            <ImageButton
-                android:id="@+id/like1"
-                android:layout_width="27dp"
-                android:layout_height="23dp"
-                android:clickable="true"
-                android:onClick="onIconButtonClick"
-                android:outlineSpotShadowColor="@color/greenBackground"
-                android:src="@drawable/heart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <ImageButton
+                        android:id="@+id/like1"
+                        android:layout_width="27dp"
+                        android:layout_height="23dp"
+                        android:layout_marginStart="65dp"
+                        android:layout_marginTop="4dp"
+                        android:clickable="true"
+                        android:onClick="onIconButtonClick"
+                        android:src="@drawable/like"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/number_of_likes_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/baloo_bhai"
+                        android:textColor="@color/greenBackground"
+                        android:textSize="20dp"
+                        android:layout_marginStart="95dp"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/description1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/baloo_bhai"
                 android:gravity="center_horizontal"
                 android:text="Posetite nas i predložite ime!"
                 android:textColor="@color/greenBackground"
                 android:textSize="20dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greenBackground" />
+
+            <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Još jedna prinova"
+                android:textColor="@color/greenBackground"
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"/>
 
             <ImageView
                 android:id="@+id/hippo"
@@ -164,6 +197,68 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/baby_hippo" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/like2"
+                    android:layout_width="27dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:onClick="onIconButtonClick"
+                    android:src="@drawable/like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_likes_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:textColor="@color/greenBackground"
+                    android:textSize="20dp"
+                    android:layout_marginStart="95dp"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Najslađe što ćete videti danas!"
+                android:textColor="@color/greenBackground"
+                android:textSize="20dp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greenBackground" />
+
+
+            <TextView
+                android:id="@+id/name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Četiri je družina"
+                android:textColor="@color/greenBackground"
+                android:layout_marginTop="30dp"
+                android:textSize="30dp" />
+
+
             <ImageView
                 android:id="@+id/dogs"
                 android:layout_width="280dp"
@@ -171,6 +266,69 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/baby" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/like3"
+                    android:layout_width="27dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:onClick="onIconButtonClick"
+                    android:src="@drawable/like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_likes_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:textColor="@color/greenBackground"
+                    android:textSize="20dp"
+                    android:layout_marginStart="95dp"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="4 bebe jorkija!"
+                android:textColor="@color/greenBackground"
+                android:textSize="20dp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greenBackground" />
+
+
+            <TextView
+                android:id="@+id/name4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Kralj džulijan pozira"
+                android:textColor="@color/greenBackground"
+                android:layout_marginTop="30dp"
+                android:textSize="30dp" />
+
 
             <ImageView
                 android:id="@+id/mercat"
@@ -180,6 +338,70 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/posing_mercat" />
 
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/like4"
+                    android:layout_width="27dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:onClick="onIconButtonClick"
+                    android:src="@drawable/like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_likes_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:textColor="@color/greenBackground"
+                    android:textSize="20dp"
+                    android:layout_marginStart="95dp"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Danas je bio raspoložen za slikanje"
+                android:textColor="@color/greenBackground"
+                android:textSize="20dp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greenBackground" />
+
+
+            <TextView
+                android:id="@+id/name5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Odabrana ekipa"
+                android:textColor="@color/greenBackground"
+                android:textSize="30dp"
+                android:layout_marginTop="30dp"
+                />
+
+
             <ImageView
                 android:id="@+id/alpaca"
                 android:layout_width="280dp"
@@ -187,6 +409,49 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/alpacas" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/like5"
+                    android:layout_width="27dp"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="4dp"
+                    android:clickable="true"
+                    android:onClick="onIconButtonClick"
+                    android:src="@drawable/like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_of_likes_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:textColor="@color/greenBackground"
+                    android:textSize="20dp"
+                    android:layout_marginStart="95dp"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/baloo_bhai"
+                android:gravity="center_horizontal"
+                android:text="Iskoristite lep dan kao ova družina!"
+                android:textColor="@color/greenBackground"
+                android:textSize="20dp" />
 
         </LinearLayout>
 

@@ -1,5 +1,7 @@
 package com.example.pandicazoovrt;
 
+import java.lang.reflect.Array;
+
 public class User {
     private String username;
     private String password;
@@ -9,6 +11,8 @@ public class User {
     private String phone;
     private String address;
 
+    private int [] events;
+
 
     public User(
         String username,
@@ -17,7 +21,8 @@ public class User {
         String firstName,
         String lastName,
         String phone,
-        String address
+        String address,
+        int [] events
     ) {
         this.username = username;
         this.password = password;
@@ -26,6 +31,7 @@ public class User {
         this.lastName = lastName;
         this.phone = phone;
         this.address = address;
+        this.events = events;
     }
 
     public String getEmail() {
@@ -54,5 +60,13 @@ public class User {
 
     public String getPassword() {
         return this.password;
+    }
+
+    public int[] getEvents() {
+        return events;
+    }
+
+    public void setEvents(int[] events) {
+        this.events = events;
     }
 }

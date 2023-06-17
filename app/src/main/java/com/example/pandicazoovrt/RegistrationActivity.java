@@ -54,8 +54,8 @@ public class RegistrationActivity extends AppCompatActivity {
                 String lastName = lastNameEditText.getText().toString();
                 String address = addressEditText.getText().toString();
                 String phone = phoneEditText.getText().toString();
-
-                User userToRegister = new User(username, password, email, firstName, lastName, phone, address);
+                int[] events = {0,0,0,0,0};
+                User userToRegister = new User(username, password, email, firstName, lastName, phone, address, events);
 
                 String validationError = Validator.validateInput(userToRegister);
 
