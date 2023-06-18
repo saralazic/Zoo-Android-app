@@ -17,12 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pandicazoovrt.AboutActivity;
 import com.example.pandicazoovrt.AccountActivity;
-import com.example.pandicazoovrt.AnimalsActivity;
-import com.example.pandicazoovrt.ErrorMessages;
+import com.example.pandicazoovrt.constants.Errors;
+import com.example.pandicazoovrt.animals.AnimalsActivity;
 import com.example.pandicazoovrt.EventsActivity;
 import com.example.pandicazoovrt.NotificationsActivity;
-import com.example.pandicazoovrt.Prices;
-import com.example.pandicazoovrt.PromoCodes;
+import com.example.pandicazoovrt.constants.Prices;
+import com.example.pandicazoovrt.constants.PromoCodes;
 import com.example.pandicazoovrt.R;
 import com.example.pandicazoovrt.utils;
 
@@ -225,7 +225,7 @@ public class ChildrenTicketsActivity extends AppCompatActivity {
             int sumFull = discounted[3] * priceFull;
             this.price = sumZoo + sumAq + +sumFeed + sumFull;
         } else {
-            this.message = ErrorMessages.INVALID_TICKET_INPUT;
+            this.message = Errors.INVALID_TICKET_INPUT;
         }
         return this.price;
     }

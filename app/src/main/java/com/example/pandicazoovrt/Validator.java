@@ -1,5 +1,8 @@
 package com.example.pandicazoovrt;
 
+import com.example.pandicazoovrt.constants.Errors;
+import com.example.pandicazoovrt.models.User;
+
 import java.util.regex.Pattern;
 
 public class Validator {

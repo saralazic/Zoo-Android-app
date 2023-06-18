@@ -1,4 +1,4 @@
-package com.example.pandicazoovrt;
+package com.example.pandicazoovrt.constants;
 
 public class PromoCodes {
     public static String free_feeding = "bamboo";

@@ -1,4 +1,4 @@
-package com.example.pandicazoovrt;
+package com.example.pandicazoovrt.authorization;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pandicazoovrt.AuthorizationService;
+import com.example.pandicazoovrt.constants.Errors;
+import com.example.pandicazoovrt.HomepageActivity;
+import com.example.pandicazoovrt.R;
+import com.example.pandicazoovrt.Validator;
+import com.example.pandicazoovrt.models.User;
 
 public class RegistrationActivity extends AppCompatActivity {
 

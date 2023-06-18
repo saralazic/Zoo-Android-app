@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tickets.TicketsActivity"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/panda_tickets"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-30dp">
+
+        <!-- HEADER -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp"
+            android:background="@color/greenBackground"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageButton
+                android:id="@+id/ticketsIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/confirmation_number"
+                android:outlineSpotShadowColor="@color/greenBackground"
+                android:background="@color/greenBackground"
+                android:clickable="true"
+                android:onClick="onIconButtonClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                />
+
+            <ImageButton
+                android:id="@+id/eventsIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/event_seat"
+                android:outlineSpotShadowColor="@color/greenBackground"
+                android:background="@color/greenBackground"
+                android:clickable="true"
+                android:onClick="onIconButtonClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.3"
+                />
+
+            <ImageButton
+                android:id="@+id/animalsIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pets"
+                android:outlineSpotShadowColor="@color/greenBackground"
+                android:background="@color/greenBackground"
+                android:clickable="true"
+                android:onClick="onIconButtonClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/notificationsIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/notifications"
+                android:outlineSpotShadowColor="@color/greenBackground"
+                android:background="@color/greenBackground"
+                android:clickable="true"
+                android:onClick="onIconButtonClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.7"
+                />
+
+            <ImageButton
+                android:id="@+id/accountIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/account"
+                android:outlineSpotShadowColor="@color/greenBackground"
+                android:background="@color/greenBackground"
+                android:clickable="true"
+                android:onClick="onIconButtonClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Second nested ConstraintLayout -->
+
+        <!-- FOOTER -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="-27dp"
+            tools:layout_editor_absoluteY="0dp">
+            <!-- Footer content here -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="88dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp">
+
+                <Button
+                    android:id="@+id/ChildrenBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="25dp"
+                    android:background="@drawable/button_background_tickets"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="1dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="1dp"
+                    android:text="Deca"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/AdultBtn"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.3" />
+
+                <Button
+                    android:id="@+id/AdultBtn"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="28dp"
+                    android:background="@drawable/button_background_tickets"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="1dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="1dp"
+                    android:text="Odrasli"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/GroupBtn"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/ChildrenBtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.3" />
+
+                <Button
+                    android:id="@+id/GroupBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/button_background_tickets"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="1dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="1dp"
+                    android:text="Grupne posete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintStart_toEndOf="@id/AdultBtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="156dp"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="Promo ponuda"
+                android:textColor="@color/white"
+                android:textSize="35dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="228dp"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="Da hranis pande ukucaj kod: bamboo"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="272dp"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="Treći dobija kartu gratis: embarassment"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="316dp"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="Poklon iznenadjenja: redpanda"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/aboutLink"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="O NAMA"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_marginRight="10dp"
+                android:linksClickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

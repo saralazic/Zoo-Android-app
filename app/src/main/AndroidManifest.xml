@@ -15,7 +15,7 @@
         tools:targetApi="31">
         <!-- LoginActivity -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".authorization.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,10 +27,10 @@
         <activity android:name=".BaseActivity" /> <!-- Other activities -->
 
 
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".authorization.RegistrationActivity" />
         <activity android:name=".HomepageActivity" />
         <activity android:name=".AboutActivity" />
-        <activity android:name=".AnimalsActivity" />
+        <activity android:name=".animals.AnimalsActivity" />
         <activity android:name=".EventsActivity" />
         <activity android:name=".NotificationsActivity" />
         <activity android:name=".AccountActivity" />
@@ -39,6 +39,7 @@
         <activity android:name=".tickets.ChildrenTicketsActivity" />
         <activity android:name=".tickets.AdultsTicketsActivity" />
         <activity android:name=".tickets.GroupTicketsActivity" />
+        <activity android:name=".animals.PageAnimalActivity" />
 
     </application>
 

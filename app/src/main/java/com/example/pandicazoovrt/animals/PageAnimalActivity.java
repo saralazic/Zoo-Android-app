@@ -1,6 +1,4 @@
-package com.example.pandicazoovrt;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.pandicazoovrt.animals;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -8,17 +6,27 @@ import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pandicazoovrt.AboutActivity;
+import com.example.pandicazoovrt.AccountActivity;
+import com.example.pandicazoovrt.EventsActivity;
+import com.example.pandicazoovrt.NotificationsActivity;
+import com.example.pandicazoovrt.R;
+import com.example.pandicazoovrt.models.Animal;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
+import com.example.pandicazoovrt.utils;
 
 import java.util.List;
 
-public class AnimalsActivity extends AppCompatActivity {
+public class PageAnimalActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animals);
+        setContentView(R.layout.activity_page_animal);
 
         // footer
         TextView linkTextView = findViewById(R.id.aboutLink);
@@ -28,7 +36,7 @@ public class AnimalsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Handle link click event here
                 // For example, navigate to another activity/page in your app
-                Intent intent = new Intent(AnimalsActivity.this, AboutActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
         });
@@ -38,7 +46,7 @@ public class AnimalsActivity extends AppCompatActivity {
         ticketsImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalsActivity.this, TicketsActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, TicketsActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +55,7 @@ public class AnimalsActivity extends AppCompatActivity {
         eventsImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalsActivity.this, EventsActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, EventsActivity.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +64,7 @@ public class AnimalsActivity extends AppCompatActivity {
         animalsImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalsActivity.this, AnimalsActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, PageAnimalActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +73,7 @@ public class AnimalsActivity extends AppCompatActivity {
         notificationsImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalsActivity.this, NotificationsActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, NotificationsActivity.class);
                 startActivity(intent);
             }
         });
@@ -74,31 +82,35 @@ public class AnimalsActivity extends AppCompatActivity {
         accountImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimalsActivity.this, AccountActivity.class);
+                Intent intent = new Intent(PageAnimalActivity.this, AccountActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        ImageButton[] animalImages = {null, null, null, null, null, null, null, null, null, null};
-        TextView animalSpecies[] = {null, null, null, null, null, null, null, null, null, null};
+        Animal currentAnimal = utils.getCurrentAnimal();
 
-        int[] animalImgIds = {R.id.animalImg1, R.id.animalImg2, R.id.animalImg3, R.id.animalImg4, R.id.animalImg5, R.id.animalImg6, R.id.animalImg7, R.id.animalImg8, R.id.animalImg9, R.id.animalImg10};
-        int[] animalSpcsIds = {R.id.specie1, R.id.specie2, R.id.specie3, R.id.specie4, R.id.specie5, R.id.specie6, R.id.specie7, R.id.specie8, R.id.specie9, R.id.specie10};
+        Drawable img = getImage(currentAnimal.getImg());
+        ImageView imageView= findViewById(R.id.animalImg);
+        imageView.setBackground(img);
 
-        List<Animal> animals = utils.getAllAnimals();
 
-        // animals
-        for(int i=0; i<10; i++){
-            Animal currentAnimal = animals.get(i);
-            Drawable img = getImage(currentAnimal.getImg());
-            animalImages[i] = findViewById(animalImgIds[i]);
-            animalSpecies[i] = findViewById(animalSpcsIds[i]);
+        TextView specieView = findViewById(R.id.specie);
+        specieView.setText(currentAnimal.getSpecie());
 
-            animalImages[i].setBackground(img);
-            animalSpecies[i].setText(currentAnimal.getSpecie());
-        }
+        TextView latinView = findViewById(R.id.latin);
+        latinView.setText("latinski naziv: "+currentAnimal.getLatin());
 
+
+        TextView descentView = findViewById(R.id.descent);
+        descentView.setText("poreklo: "+currentAnimal.getDescent());
+
+        TextView populationView = findViewById(R.id.population);
+        populationView.setText("populacija: "+currentAnimal.getPopulation());
+
+
+        TextView lifespanView = findViewById(R.id.lifespan);
+        lifespanView.setText("životni vek: "+currentAnimal.getLifespan());
 
 
     }

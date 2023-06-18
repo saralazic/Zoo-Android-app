@@ -1,18 +1,14 @@
 package com.example.pandicazoovrt;
 
+import com.example.pandicazoovrt.constants.PromoCodes;
+import com.example.pandicazoovrt.models.Animal;
+import com.example.pandicazoovrt.models.User;
 import com.example.pandicazoovrt.tickets.Comment;
-import com.example.pandicazoovrt.tickets.TicketsActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.text.method.LinkMovementMethod;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.drawable.Drawable;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -34,6 +30,9 @@ public class utils {
     public static String ALL_ANIMALS = "ANIMALS";
     public static String EVENTS = "EVENTS";
     public static String LOGGED_USER = "LOGGED_USER";
+
+    public static String CURRENT_ANIMAL = "CURRENT_ANIMAL";
+
 
     public static void initUser(){
         List<User> userList = new ArrayList<>();
@@ -236,8 +235,12 @@ public class utils {
 
     public static User getLoggedInUser(){
         return utils.getOneObjectFromLocalStorage(LOGGED_USER, new TypeToken<User>(){}.getType());
-
     }
+
+    public static Animal getCurrentAnimal(){
+        return utils.getOneObjectFromLocalStorage(CURRENT_ANIMAL, new TypeToken<Animal>(){}.getType());
+    }
+
     public static List<User> getAllUsers(){
         return utils.getListOfObjectsFromLocalStorage(ALL_USERS, new TypeToken<List<User>>(){}.getType());
     }
@@ -245,6 +248,7 @@ public class utils {
     public static List<Animal> getAllAnimals(){
         return utils.getListOfObjectsFromLocalStorage(ALL_ANIMALS, new TypeToken<List<Animal>>(){}.getType());
     }
+
 
     public static int[] getEvents(){
         return getIntArrayFromLocalStorage(EVENTS);

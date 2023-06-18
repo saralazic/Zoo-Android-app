@@ -1,6 +1,7 @@
-package com.example.pandicazoovrt;
+package com.example.pandicazoovrt.constants;
 
 public class Errors {
+    public static String INVALID_TICKET_INPUT = "Molimo unestite ispravan broj karata!";
     public static String BAD_CREDENTIALS = "Pogrešni kredencijali!";
     public static String EMPTY_INPUTS = "Sva polja su obavezna!";
     public static String BAD_PASSWORD = "Lozinka nije dovoljno jaka!";

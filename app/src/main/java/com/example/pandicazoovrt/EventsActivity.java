@@ -4,14 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.media.Image;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.pandicazoovrt.animals.AnimalsActivity;
+import com.example.pandicazoovrt.models.User;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 
 
@@ -82,7 +82,6 @@ public class EventsActivity extends AppCompatActivity {
         });
 
         User loggedUser = utils.getLoggedInUser();
-        int[] events = utils.getEvents();
 
         //likes init color
 

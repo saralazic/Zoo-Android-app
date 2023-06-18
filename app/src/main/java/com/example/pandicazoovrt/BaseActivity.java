@@ -2,13 +2,12 @@ package com.example.pandicazoovrt;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pandicazoovrt.animals.AnimalsActivity;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 
 public class BaseActivity extends AppCompatActivity {

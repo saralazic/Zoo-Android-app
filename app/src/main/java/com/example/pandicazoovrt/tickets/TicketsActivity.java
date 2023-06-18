@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pandicazoovrt.AboutActivity;
 import com.example.pandicazoovrt.AccountActivity;
-import com.example.pandicazoovrt.AnimalsActivity;
+import com.example.pandicazoovrt.animals.AnimalsActivity;
 import com.example.pandicazoovrt.EventsActivity;
 import com.example.pandicazoovrt.NotificationsActivity;
 import com.example.pandicazoovrt.R;

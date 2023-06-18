@@ -1,4 +1,4 @@
-package com.example.pandicazoovrt;
+package com.example.pandicazoovrt.models;
 
 import java.lang.reflect.Array;
 

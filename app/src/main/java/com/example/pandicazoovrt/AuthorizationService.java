@@ -1,7 +1,8 @@
 package com.example.pandicazoovrt;
 
-import android.content.Context;
 import android.util.Log;
+
+import com.example.pandicazoovrt.models.User;
 
 import java.util.List;
 
