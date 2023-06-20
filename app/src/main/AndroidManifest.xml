@@ -16,7 +16,9 @@
         <!-- LoginActivity -->
         <activity
             android:name=".authorization.LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +41,9 @@
         <activity android:name=".tickets.ChildrenTicketsActivity" />
         <activity android:name=".tickets.AdultsTicketsActivity" />
         <activity android:name=".tickets.GroupTicketsActivity" />
-        <activity android:name=".animals.PageAnimalActivity" />
+        <activity android:name=".animals.PageAnimalActivity"
+            android:windowSoftInputMode="adjustPan"
+            />
 
     </application>
 

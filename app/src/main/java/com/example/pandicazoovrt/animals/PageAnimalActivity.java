@@ -10,18 +10,20 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 
 import com.example.pandicazoovrt.AboutActivity;
 import com.example.pandicazoovrt.AccountActivity;
@@ -29,10 +31,12 @@ import com.example.pandicazoovrt.EventsActivity;
 import com.example.pandicazoovrt.NotificationsActivity;
 import com.example.pandicazoovrt.R;
 import com.example.pandicazoovrt.models.Animal;
+import com.example.pandicazoovrt.models.User;
 import com.example.pandicazoovrt.tickets.Comment;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 import com.example.pandicazoovrt.utils;
 
+import java.util.Date;
 import java.util.List;
 
 public class PageAnimalActivity extends AppCompatActivity {
@@ -102,6 +106,7 @@ public class PageAnimalActivity extends AppCompatActivity {
 
 
         Animal currentAnimal = utils.getCurrentAnimal();
+        User currentUser = utils.getLoggedInUser();
 
         Drawable img = getImage(currentAnimal.getImg());
         ImageView imageView= findViewById(R.id.animalImg);
@@ -126,6 +131,7 @@ public class PageAnimalActivity extends AppCompatActivity {
         lifespanView.setText("životni vek: "+currentAnimal.getLifespan());
 
         LinearLayout commentsLevel1 = findViewById(R.id.commentLevel1); // Assuming you have a LinearLayout with id 'container' in your XML layout
+
 
         Comment[] comments = currentAnimal.getComments();
 
@@ -173,6 +179,62 @@ public class PageAnimalActivity extends AppCompatActivity {
                 replyCommentContainer.addView(replyCommentLayout);
             }
        }
+
+
+        EditText postCommentText = findViewById(R.id.postCommentText);
+        Button postCommentButton = findViewById(R.id.postCommentButton);
+
+        postCommentButton.setEnabled(false);
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Not used, but required for implementation
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Update the button state based on the text field's content
+                String text = charSequence.toString().trim();
+                postCommentButton.setEnabled(!text.isEmpty());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Not used, but required for implementation
+            }
+        };
+
+        postCommentText.addTextChangedListener(textWatcher);
+
+        postCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText postCommentText = findViewById(R.id.postCommentText);
+                String text = String.valueOf(postCommentText.getText());
+
+                Comment[] comments1 = new Comment[comments.length+1];
+                System.arraycopy(comments, 0, comments1, 1, comments.length);
+                Comment[] replies = {};
+                comments1[0] = new Comment(currentUser.getUsername(), new Date(), text, replies);
+                List<Animal> allAnimals = utils.getAllAnimals();
+                int index = allAnimals.stream()
+                        .filter(element -> element.getSpecie().equals(currentAnimal.getSpecie()))
+                        .findAny()
+                        .map(element -> allAnimals.indexOf(element))
+                        .orElse(-1);
+
+
+                currentAnimal.setComments(comments1);
+                utils.saveOneObjectToLocalStorage(utils.CURRENT_ANIMAL, currentAnimal);
+                if (index>-1)
+                    allAnimals.set(index, currentAnimal);
+                utils.saveListOfObjectsToLocalStorage(utils.ALL_ANIMALS, allAnimals);
+                postCommentText.setText("");
+                postCommentText.clearFocus();
+                recreate();
+            }
+        });
+
 
     }
 

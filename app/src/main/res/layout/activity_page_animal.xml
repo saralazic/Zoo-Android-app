@@ -198,6 +198,8 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="0dp"
                 >
+
+
                 <LinearLayout
                     android:id="@+id/commentLevel1"
                     android:layout_width="370dp"
@@ -210,6 +212,38 @@
                     app:layout_constraintVertical_bias="0"
                     android:orientation="vertical"
                     >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <EditText
+                            android:id="@+id/postCommentText"
+                            android:layout_width="310dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:hint="Komentar" />
+
+                        <Button
+                            android:id="@+id/postCommentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="28dp"
+                            android:fontFamily="@font/baloo_bhai"
+                            android:textSize="12dp"
+                            android:text="objavi"
+                            android:background="@drawable/button_background_login"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="0dp"
+                            android:paddingBottom="1dp"
+                            android:layout_marginTop="5dp"
+                            />
+
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
 

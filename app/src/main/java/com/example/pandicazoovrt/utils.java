@@ -19,7 +19,6 @@ import java.util.List;
 public class utils {
 
     public static void initAll(){
-        clearStorage();
         initUser();
         initEvents();
         initAnimal();
