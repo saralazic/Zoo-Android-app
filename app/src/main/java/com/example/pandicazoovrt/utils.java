@@ -469,6 +469,11 @@ public class utils {
         editor.clear();
         editor.apply();
     }
+
+    public static void changeUsernameEveryWhere(String old, String newUsername){
+        // comments and replies
+        // notifications
+    }
 }
 
 
