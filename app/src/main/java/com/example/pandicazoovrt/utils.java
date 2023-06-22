@@ -2,6 +2,7 @@ package com.example.pandicazoovrt;
 
 import com.example.pandicazoovrt.constants.PromoCodes;
 import com.example.pandicazoovrt.models.Animal;
+import com.example.pandicazoovrt.models.Notifications;
 import com.example.pandicazoovrt.models.User;
 import com.example.pandicazoovrt.tickets.Comment;
 import com.google.gson.Gson;
@@ -12,16 +13,21 @@ import android.graphics.drawable.Drawable;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class utils {
 
     public static void initAll(){
+        clearStorage();
         initUser();
         initEvents();
         initAnimal();
+        initNotifications();
     }
 
 
@@ -29,6 +35,8 @@ public class utils {
     public static String ALL_ANIMALS = "ANIMALS";
     public static String EVENTS = "EVENTS";
     public static String LOGGED_USER = "LOGGED_USER";
+
+    public static String NOTIFICATIONS = "NOTIFICATIONS";
 
     public static String CURRENT_ANIMAL = "CURRENT_ANIMAL";
 
@@ -67,7 +75,6 @@ public class utils {
     }
 
     public static void initEvents(){
-
         int [] eventNumbers = new int[]{252, 181, 202 , 108, 281};
 
         int[] eventsFromStorage = getEvents();
@@ -106,11 +113,17 @@ public class utils {
 
 
         Comment[] commentsRedPanda = {new Comment(
-                "Prelepa je",
+                "sara",
                 new Date(2023, 4, 28),
                 "Volim pande",
                 emptyCommentsSection
         ),
+                new Comment(
+                        "mina",
+                        new Date(2023, 4, 28),
+                        "prelepa je",
+                        emptyCommentsSection
+                ),
         };
 
         animalList.add(new Animal(
@@ -229,6 +242,50 @@ public class utils {
         if(listFromStorage.isEmpty()){
             utils.saveListOfObjectsToLocalStorage(ALL_ANIMALS, animalList);
         }
+
+
+
+
+
+    }
+
+
+    public static void initNotifications() {
+        List<Notifications> notificationsList = new ArrayList<>();
+
+        notificationsList.add(new Notifications(
+                "sara",
+                true,
+                "Vaš zahtev za kupovinu 3 karte za odrasle je odobren, uživajte u poseti!",
+                new Date(2020, 10, 8, 15, 23)
+        ));
+
+
+        notificationsList.add(new Notifications(
+                "sara",
+                true,
+                "Nažalost, Vaš zahtev za kupovinu 2 karte za odrasle je odbijen, molimo pokušajte ponovo kasnije!",
+                new Date(2022, 6, 10, 8, 48)
+        ));
+
+        notificationsList.add(new Notifications(
+                "mina",
+                true,
+                "Vaš zahtev za kupovinu 3 karte za odrasle je odobren, uživajte u poseti!",
+                new Date(2022, 10, 10, 12, 20)
+        ));
+
+        notificationsList.add(new Notifications(
+                "sara",
+                false,
+                "Zahtev za kupovinu 4 karte za odrasle je odobren, uživajte u poseti!",
+                new Date(2023, 10, 5, 22, 48)
+        ));
+
+        List<Notifications> notificationsFromStorage = getAllNotifications();
+        if(notificationsFromStorage.isEmpty()){
+            utils.saveListOfObjectsToLocalStorage(NOTIFICATIONS, notificationsList);
+        }
     }
 
 
@@ -248,6 +305,27 @@ public class utils {
         return utils.getListOfObjectsFromLocalStorage(ALL_ANIMALS, new TypeToken<List<Animal>>(){}.getType());
     }
 
+    public static List<Notifications> getAllNotifications(){
+        return utils.getListOfObjectsFromLocalStorage(NOTIFICATIONS, new TypeToken<List<Notifications>>(){}.getType());
+    }
+
+    public static List<Notifications> getNotificationsForLoggedUser(){
+        User logged = getLoggedInUser();
+        List<Notifications> allNotifications = getAllNotifications();
+
+        List<Notifications> filteredList = allNotifications.stream()
+                .filter(notification -> notification.getUsername().equals(logged.getUsername()))
+                .collect(Collectors.toList());
+
+        Collections.sort(filteredList, new Comparator<Notifications>() {
+            @Override
+            public int compare(Notifications n1, Notifications n2) {
+                return n2.getDate().compareTo(n1.getDate());
+            }
+        });
+
+        return filteredList;
+    }
 
     public static int[] getEvents(){
         return getIntArrayFromLocalStorage(EVENTS);

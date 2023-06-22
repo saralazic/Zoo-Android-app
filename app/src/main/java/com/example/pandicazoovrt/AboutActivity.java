@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pandicazoovrt.animals.AnimalsActivity;
+import com.example.pandicazoovrt.models.Notifications;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 
 public class AboutActivity extends AppCompatActivity {
@@ -65,5 +66,6 @@ public class AboutActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
