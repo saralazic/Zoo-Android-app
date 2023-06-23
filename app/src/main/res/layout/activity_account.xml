@@ -103,7 +103,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:src="@drawable/fat_panda"
             app:layout_constraintBottom_toTopOf="@id/linear_layout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -213,6 +213,17 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/baloo_bhai"
                     android:text="Potvrdi izmenu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/logout_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo_bhai"
+                    android:textColor="@color/logout"
+                    android:textSize="14dp"
+                    android:text="Izloguj se"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 

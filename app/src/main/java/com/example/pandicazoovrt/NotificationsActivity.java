@@ -8,6 +8,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -108,6 +109,21 @@ public class NotificationsActivity extends AppCompatActivity {
 
             layout.addView(notif);
         }
+
+
+
+        TextView linkTextView = findViewById(R.id.aboutLink);
+        linkTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        linkTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle link click event here
+                // For example, navigate to another activity/page in your app
+                Intent intent = new Intent(NotificationsActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

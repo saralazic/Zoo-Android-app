@@ -125,6 +125,28 @@
         </ScrollView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--> FOOTER <-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/aboutLink"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:fontFamily="@font/baloo_bhai"
+            android:text="O NAMA"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_marginRight="10dp"
+            android:linksClickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pandicazoovrt.animals.AnimalsActivity;
+import com.example.pandicazoovrt.authorization.LoginActivity;
 import com.example.pandicazoovrt.models.User;
 import com.example.pandicazoovrt.tickets.TicketsActivity;
 
@@ -113,15 +114,15 @@ public class AccountActivity extends AppCompatActivity {
                 String address = addressEditText.getText().toString();
                 String phone = phoneEditText.getText().toString();
 
-                if (username.length()>3) {
+                if (username.length() > 3) {
                     utils.changeUsernameEveryWhere(loggedIn.getUsername(), username);
                     loggedIn.setUsername(username);
                 }
-                if (password.length()>3) loggedIn.setPassword(password);
-                if(firstName.length()>3) loggedIn.setFirstName(firstName);
-                if(lastName.length()>3) loggedIn.setLastName(lastName);
-                if(address.length()>3) loggedIn.setAddress(address);
-                if(phone.length()>3) loggedIn.setPhone(phone);
+                if (password.length() > 3) loggedIn.setPassword(password);
+                if (firstName.length() > 3) loggedIn.setFirstName(firstName);
+                if (lastName.length() > 3) loggedIn.setLastName(lastName);
+                if (address.length() > 3) loggedIn.setAddress(address);
+                if (phone.length() > 3) loggedIn.setPhone(phone);
 
                 List<User> allUsers = utils.getAllUsers();
                 allUsers.forEach(u -> {
@@ -136,13 +137,23 @@ public class AccountActivity extends AppCompatActivity {
                 });
                 utils.saveListOfObjectsToLocalStorage(utils.ALL_USERS, allUsers);
                 utils.saveOneObjectToLocalStorage(utils.LOGGED_USER, loggedIn);
-            }
+            }});
 
 
             // OSTALO JE ENABLE DISABLE DUGMETA
-        });
 
+
+            //LOGOUT
+            Button logout = findViewById(R.id.logout_button);
+            logout.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick (View v){
+                        utils.logout();
+                        Intent intent = new Intent(AccountActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
 
     }
-
 }

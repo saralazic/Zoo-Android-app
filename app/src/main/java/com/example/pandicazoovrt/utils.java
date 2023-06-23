@@ -242,11 +242,6 @@ public class utils {
         if(listFromStorage.isEmpty()){
             utils.saveListOfObjectsToLocalStorage(ALL_ANIMALS, animalList);
         }
-
-
-
-
-
     }
 
 
@@ -291,6 +286,13 @@ public class utils {
 
     public static User getLoggedInUser(){
         return utils.getOneObjectFromLocalStorage(LOGGED_USER, new TypeToken<User>(){}.getType());
+    }
+
+    public static void logout(){
+        SharedPreferences sharedPreferences = MyApplication.getInstance().getSharedPreferences();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(LOGGED_USER);
+        editor.commit();
     }
 
     public static Animal getCurrentAnimal(){
@@ -472,7 +474,22 @@ public class utils {
 
     public static void changeUsernameEveryWhere(String old, String newUsername){
         // comments and replies
+        List<Animal> animals = utils.getAllAnimals();
+        animals.forEach(animal -> {
+            Comment[] comments = animal.getComments();
+            for(int i=0; i<comments.length; i++){
+                if(comments[i].getAuthor().equals(old)) comments[i].setAuthor(newUsername);
+            }
+            animal.setComments(comments);
+        });
+        utils.saveListOfObjectsToLocalStorage(utils.ALL_ANIMALS, animals);
+
         // notifications
+        List<Notifications> notifications = utils.getAllNotifications();
+        notifications.forEach(notification -> {
+            if(notification.getUsername().equals(old)) notification.setUsername(newUsername);
+        });
+        utils.saveListOfObjectsToLocalStorage(utils.NOTIFICATIONS, notifications);
     }
 }
 
